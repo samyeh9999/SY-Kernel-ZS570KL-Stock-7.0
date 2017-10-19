@@ -151,6 +151,19 @@ config MSM_JTAG
 	  If unsure, say 'N' here to avoid potential power, performance and
 	  memory penalty.
 
+config ALUCARD_HOTPLUG
+	bool "Enable alucard-hotplug cpu hotplug driver"
+        default n
+        help
+	Generic Alucard-hotplug cpu hotplug driver for ARM SOCs
+
+config ASMP
+ 	bool "Multi-core automatic hotplug support"
+	depends on SMP
+	default y
+	help
+	Automatically hotplugs the multiple cpu cores on and off based on cpu load and suspend state.
+
 config MSM_JTAG_MM
 	bool "Debug and ETM trace support across power collapse using memory mapped access"
 	help
